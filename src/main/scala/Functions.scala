@@ -21,4 +21,7 @@ object Functions {
 
   private def defaultValue(number: Int, text: String = "Republic of devs"): String = s"$number - $text"
 
+  //this function does not have implementation.
+  //it is abstract. Should not be called
+  private def abstractFunction(number: Int): Int = ???
 }
