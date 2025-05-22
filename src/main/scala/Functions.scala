@@ -11,6 +11,11 @@ object Functions {
     println(defaultValue(text = "Keep coding", number = 2))
     println(defaultValue(number = 3))
     println(defaultValue(3))
+
+    println(power(3))
+    println(power(3, 3))
+    println(powerRaw(3))
+    println(powerRaw(3, 3))
   }
 
   private def isEven(number: Int): Boolean = {
@@ -24,4 +29,13 @@ object Functions {
   //this function does not have implementation.
   //it is abstract. Should not be called
   private def abstractFunction(number: Int): Int = ???
+
+  /**
+   * todo
+   * Investigate differences between  functions  and  methods in Scala
+   * */
+
+  private def power(exponent: Int, base: Int = 2): Int = Math.pow(base.toDouble, exponent.toDouble).toInt
+
+  private def powerRaw(exponent: Int, base: Int = 2): Int = Math.pow(base, exponent).toInt
 }
