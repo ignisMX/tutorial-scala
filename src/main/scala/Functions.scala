@@ -12,10 +12,21 @@ object Functions {
     println(defaultValue(number = 3))
     println(defaultValue(3))
 
+    println("Power")
     println(power(3))
     println(power(3, 3))
+
+    println("Power Raw")
     println(powerRaw(3))
     println(powerRaw(3, 3))
+
+    println("Power With Range")
+    println(powerWithRange(3))
+    println(powerWithRange(3, 3))
+
+    println("Power With Range Shortcut")
+    println(powerWithRangeShortcut(3))
+    println(powerWithRangeShortcut(3, 3))
   }
 
   private def isEven(number: Int): Boolean = {
@@ -38,4 +49,20 @@ object Functions {
   private def power(exponent: Int, base: Int = 2): Int = Math.pow(base.toDouble, exponent.toDouble).toInt
 
   private def powerRaw(exponent: Int, base: Int = 2): Int = Math.pow(base, exponent).toInt
+
+  private def powerWithRange(exponent: Int, base: Int = 2): Int = {
+
+    var accumulator = 1;
+    val range = 1 to exponent
+    range.foreach(element => accumulator = accumulator * base)
+    accumulator
+  }
+
+  private def powerWithRangeShortcut(exponent: Int, base: Int = 2): Int = {
+
+    var accumulator = 1;
+    val range = 1 to exponent
+    range.foreach(element => accumulator *= base)
+    accumulator
+  }
 }
